@@ -1,10 +1,8 @@
-const initialState = {};
+import { combineReducers } from 'redux';
+import updateItemsList from './items-list-reducer';
 
-export default function(state = initialState, action) {
-    switch (action.type) {
-        default:
-            return {
-                ...state
-            };
-    }
-}
+const reducer = combineReducers({
+    itemsList: updateItemsList
+});
+  
+export default reducer;
