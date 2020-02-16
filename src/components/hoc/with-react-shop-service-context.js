@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactShopServiceConsumer } from './../react-shop-service-context/react-shop-service-contect';
+import { ReactShopServiceConsumer } from '../react-shop-service-context/react-shop-service-context';
 
 const withReactShopServiceContext = () => (Wrapped) => {
     return (props) => {
@@ -12,8 +12,10 @@ const withReactShopServiceContext = () => (Wrapped) => {
                     }
                 }
             </ReactShopServiceConsumer>
-          );
+        );
     }
 }
 
-export default withReactShopServiceContext;
+export {
+    withReactShopServiceContext
+};

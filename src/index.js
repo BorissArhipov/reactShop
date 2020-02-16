@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import App from './components/app/app';
 import ReactShopService from './components/services/react-shop-service';
-import { ReactShopServiceProvider } from './components/react-shop-service-context/react-shop-service-contect';
+import { ReactShopServiceProvider } from './components/react-shop-service-context/react-shop-service-context';
 
 const reactShopService = new ReactShopService();
 

@@ -25,4 +25,6 @@ const fetchItems = (reactShopService) => () => (dispatch) => {
         .catch((err) => dispatch(itemsError(err)));
 };
 
-export default fetchItems;
+export {
+    fetchItems
+};
