@@ -15,11 +15,7 @@ class ItemsListContainer extends Component {
 
     render() {
         const {items, loading, error} = this.props;
-        return (
-            <div>
-                <ItemsList items={items}/>
-            </div>
-        );
+        return <ItemsList items={items}/>;
     }
 }
 

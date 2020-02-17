@@ -1,0 +1,44 @@
+.items-list__con {
+    width: 98%;
+    display: inline-block;
+}
+
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.items-list__item {
+    width: 250px;
+    background-color: #e6e5e8;
+    border-radius: 5px;
+    margin: 15px 15px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.items-list__item:nth-child(4n) {
+    margin: 15px 0 15px 15px;
+}
+
+.items-list__item:first-child {
+    margin: 15px 15px 15px 0;
+}
+
+.items-list__item:nth-child(5n+5) {
+    margin: 15px 15px 15px 0;
+}
+
+.items-list__img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+}
+
+.items-list__title {
+    margin: 10px 0 10px 15px;
+}
+
+.items-list__price {
+    margin: 10px 0 10px 15px;
+}
