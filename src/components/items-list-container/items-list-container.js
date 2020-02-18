@@ -4,11 +4,11 @@ import ItemsList from './../items-list/items-list';
 
 import { withReactShopServiceContext } from './../hoc/with-react-shop-service-context';
 
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
-import { compose } from './../../utils/compose';
 
 class ItemsListContainer extends Component {
+
     componentDidMount() {
         this.props.fetchItems();
     }

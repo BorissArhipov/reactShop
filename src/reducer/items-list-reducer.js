@@ -1,5 +1,4 @@
 const updateItemsList = (state, action) => {
-
     if (state === undefined) {
         return {
             items: [],
@@ -8,7 +7,7 @@ const updateItemsList = (state, action) => {
         };
     }
   
-    switch (action.type) {
+    switch (action.type) { 
         case 'FETCH_ITEMS_REQUEST':
             return {
                 items: [],

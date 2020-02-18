@@ -1,10 +1,10 @@
 import React from 'react';
+import Button from './../universal-button/universal-button';
 
 import './item-list.css';
 
 const ItemsList = ({items}) => {
     return (
-        <div className="items-list__con">
             <div className="items-list">
                 {items.map((item) => {
                     return (
@@ -16,11 +16,18 @@ const ItemsList = ({items}) => {
                             <p className="items-list__price">
                                 {item.price} &euro;
                             </p>
+                            <div className="items-list__con">
+                                <Button className="items-list__btn-white">
+                                    Viev
+                                </Button>
+                                <Button className="items-list__btn-blue">
+                                    To cart
+                                </Button>
+                            </div>
                         </div>
                     );
                 })}
-            </div>
-        </div>    
+            </div>  
     );
 }
 
