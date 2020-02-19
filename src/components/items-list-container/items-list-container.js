@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { fetchItems } from '../../actions/fetch-actions';
-import ItemsList from './../items-list/items-list';
-
-import { withReactShopServiceContext } from './../hoc/with-react-shop-service-context';
-
 import { bindActionCreators, compose } from 'redux';
 import { connect } from 'react-redux';
+
+import { fetchItems } from '../../actions/fetch-actions';
+
+import ItemsList from './../items-list/items-list';
+import Spinner from './../spinner/spinner';
+import ErrorMessage from './../error-message/error-message';
+import { withReactShopServiceContext } from './../hoc/with-react-shop-service-context';
+
+import './item-list-container.css';
 
 class ItemsListContainer extends Component {
 
@@ -15,6 +19,23 @@ class ItemsListContainer extends Component {
 
     render() {
         const {items, loading, error} = this.props;
+
+        if(loading) {
+            return(
+                <div className="spinner-con">
+                    <Spinner/>
+                </div>
+            );
+        }
+
+        if(error) {
+            return(
+                <div className="spinner-con">
+                    <ErrorMessage/>
+                </div>
+            );
+        }
+
         return <ItemsList items={items}/>;
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './../universal-button/universal-button';
+import Button from '../universal-elements/universal-button';
 
 import './item-list.css';
 
