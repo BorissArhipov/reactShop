@@ -40,7 +40,7 @@ class ItemsListContainer extends Component {
     }
 }
 
-const mapStateToProps = ({itemsList: {items, loading, error}}) => {
+const mapStateToProps = ({itemsListReducer: {items, loading, error}}) => {
     return {items, loading, error};
 }
 

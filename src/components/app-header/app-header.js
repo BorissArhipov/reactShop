@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import SearchPanel from '../header-search-panel/header-search-panel';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStore, faShoppingCart, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStore, faShoppingCart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
 
 import './app-header.css';
 
-export default class Header extends Component {
+class Header extends Component {
     render() {
+        const {count} = this.props;
         return (
             <header className="header">
                 <div className="container">
@@ -20,7 +22,7 @@ export default class Header extends Component {
                         <div className="header__con">
                             <FontAwesomeIcon className="header__cart" icon={faShoppingCart} />
                             <div className="header__count">
-                                0
+                                {count}
                             </div>
                         </div>
                         <div className="header__login">
@@ -37,3 +39,9 @@ export default class Header extends Component {
         );
     }
 }
+
+const mapStateToProps = ({cartReducer: {count}}) => {
+    return {count};
+}
+
+export default connect(mapStateToProps)(Header);

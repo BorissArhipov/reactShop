@@ -1,9 +1,11 @@
 import React from 'react';
 import Button from '../universal-elements/universal-button';
+import { connect } from 'react-redux';
+import { toCart } from './../../actions/toCart';
 
 import './item-list.css';
 
-const ItemsList = ({items}) => {
+const ItemsList = ({items, toCart}) => {
     return (
             <div className="items-list">
                 {items.map((item) => {
@@ -20,7 +22,10 @@ const ItemsList = ({items}) => {
                                 <Button className="items-list__btn-white">
                                     Viev
                                 </Button>
-                                <Button className="items-list__btn-blue">
+                                <Button 
+                                    onClick={() => {toCart({title: item.title, id: item.id, price: item.price})}}
+                                    className="items-list__btn-blue"
+                                >
                                     To cart
                                 </Button>
                             </div>
@@ -31,4 +36,5 @@ const ItemsList = ({items}) => {
     );
 }
 
-export default ItemsList;
+
+export default connect(null, { toCart })(ItemsList);

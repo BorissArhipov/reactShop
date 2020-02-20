@@ -30,7 +30,7 @@ const updateItemsList = (state, action) => {
             };
     
         default:
-            return state.itemsList;
+            return state;
         }
   };
   
