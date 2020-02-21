@@ -1,0 +1,13 @@
+.cart-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-page__con {
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
