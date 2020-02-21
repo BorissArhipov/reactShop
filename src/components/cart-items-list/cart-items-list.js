@@ -4,12 +4,13 @@ import Button from './../universal-elements/universal-button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { toCart } from './../../actions/toCart';
+import { deleteFromCart } from './../../actions/deleteFromCart';
 
 import './cart-items-list.css';
 
 class CartItemsList extends Component {
     render() {
-        const { cartItems, count, sum, toCart } = this.props;
+        const { cartItems, count, sum, toCart, deleteFromCart } = this.props;
         if(!cartItems.length) {
             return(
                 <h3 className="cart-items-list__empty">
@@ -44,7 +45,10 @@ class CartItemsList extends Component {
                                     >
                                         <FontAwesomeIcon icon={faPlus} />
                                     </Button>
-                                    <Button className="cart-items-list__btn-red">
+                                    <Button 
+                                        className="cart-items-list__btn-red"
+                                        onClick={() => {deleteFromCart({title: item.title, id: item.id, price: item.price})}}
+                                    >
                                         <FontAwesomeIcon icon={faTrash} />
                                     </Button>
                                 </div>
@@ -73,4 +77,4 @@ const mapStateToProps = ({ cartReducer: { cartItems, count, sum } }) => {
     return { cartItems, count, sum };
 }
 
-export default connect(mapStateToProps, { toCart })(CartItemsList);
+export default connect(mapStateToProps, { toCart, deleteFromCart })(CartItemsList);

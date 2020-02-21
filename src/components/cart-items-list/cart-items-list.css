@@ -24,6 +24,7 @@
     background-color: #e6e5e8;
     border-radius: 5px 5px 0 0;
     padding: 15px 0;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .cart-items-list__item {
@@ -77,6 +78,7 @@
     width: 500px;
     height: 70px;
     border-radius: 0 0 5px 5px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .cart-items-list__btn-order {
