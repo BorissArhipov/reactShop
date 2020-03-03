@@ -1,31 +1,84 @@
 import React, { Component } from 'react';
 import Header from '../app-header/app-header';
-import HomePage from './../home-page/home-page';
+import ItemPage from '../item-page/item-page';
 import { Route, Switch } from 'react-router-dom';
 import CartPage from './../cart-page/cart-page';
+import { bindActionCreators, compose } from 'redux';
+import { connect } from 'react-redux';
+import { fetchItems } from '../../actions/fetch-actions';
+import { withReactShopServiceContext } from './../hoc/with-react-shop-service-context';
+import Spinner from './../spinner/spinner';
+import ErrorMessage from './../error-message/error-message';
 
 import 'normalize.css';
 import './app.css';
 
 class App extends Component {
+
+    componentDidMount() {
+        this.props.fetchItems();
+    }
+
     render() {
+        const {itemsForPages, loading, error} = this.props;
+        let routerCount = '';
+        if(loading) {
+            return(
+                <div className="spinner-con">
+                    <Spinner/>
+                </div>
+            );
+        }
+    
+        if(error) {
+            return(
+                <div className="spinner-con">
+                    <ErrorMessage/>
+                </div>
+            );
+        }
+
         return (
             <div className="app-body">
                 <Header/>
                 <Switch>
-                <Route
-                    path="/"
-                    component={HomePage}
-                    exact />
-                <Route
-                    path="/cart"
-                    component={CartPage}
-                    exact />
+                    {itemsForPages.map((items) => {
+                        let path = routerCount;
+                        routerCount += 1;
+                        return(
+                            <Route
+                                path={`/${path}`}
+                                render={() => {
+                                    return(
+                                        <ItemPage items={items}/>
+                                    )}}
+                                exact 
+                                key={`page-${path}`}
+                            />
+                        )
+                    })}
+                    <Route
+                        path="/cart"
+                        component={CartPage}
+                        exact />
                 </Switch>
-                
             </div> 
         );  
     }
 }
 
-export default App;
+const mapStateToProps = ({itemsListReducer: {itemsForPages, loading, error}}) => {
+    return {itemsForPages, loading, error};
+}
+
+const mapDispatchToProps = (dispatch, { reactShopService }) => {
+    return bindActionCreators({
+        fetchItems: fetchItems(reactShopService)
+    }, dispatch);
+};
+  
+export default compose(
+    withReactShopServiceContext(),
+    connect(mapStateToProps, mapDispatchToProps)
+)(App);
+  

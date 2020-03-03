@@ -1,7 +1,7 @@
 const updateItemsList = (state, action) => {
     if (state === undefined) {
         return {
-            items: [],
+            itemsForPages: [],
             loading: true,
             error: null
         };
@@ -10,21 +10,30 @@ const updateItemsList = (state, action) => {
     switch (action.type) { 
         case 'FETCH_ITEMS_REQUEST':
             return {
-                items: [],
+                itemsForPages: [],
                 loading: true,
                 error: null
             };
     
         case 'FETCH_ITEMS_SUCCESS':
+            let gotItems = action.payload;
+            let sortedLists = [];
+            while(gotItems.length > 6) {
+                sortedLists.push([...gotItems.slice(0, 6)]);
+                gotItems.splice(0, 6);
+            }
+            if(gotItems.length < 6 && gotItems.length) {
+                sortedLists.push([...gotItems]);
+            }
             return {
-                items: action.payload,
+                itemsForPages: sortedLists,
                 loading: false,
                 error: null
             };
     
         case 'FETCH_ITEMS_FAILURE':
             return {
-                items: [],
+                itemsForPages: [],
                 loading: false,
                 error: action.payload
             };
