@@ -7,11 +7,13 @@
 
 .items-list__item {
     width: 300px;
+    height: 560px;
     background-color: #e6e5e8;
     border-radius: 5px;
     margin: 15px 15px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: 0.2s;
+    animation: fadeIn ease 1s;
 }
 
 .items-list__item:hover {

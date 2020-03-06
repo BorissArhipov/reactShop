@@ -1,0 +1,23 @@
+.item-page-links__con {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.item-page-links__con a {
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    background-color: #ffffff;
+    color: #2f445c;
+    margin: 0 5px;
+    border-radius: 10px;
+    border: solid 1px #2f445c;
+    line-height: 27px;
+    transition: 0.2s;
+}
+
+.item-page-links__con a:hover {
+    background-color: #2f445c;
+    color: #ffffff;
+}

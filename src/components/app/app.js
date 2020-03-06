@@ -9,6 +9,7 @@ import { fetchItems } from '../../actions/fetch-actions';
 import { withReactShopServiceContext } from './../hoc/with-react-shop-service-context';
 import Spinner from './../spinner/spinner';
 import ErrorMessage from './../error-message/error-message';
+import ItemPageLinks from './../item-page-links/item-page-links';
 
 import 'normalize.css';
 import './app.css';
@@ -21,7 +22,8 @@ class App extends Component {
 
     render() {
         const {itemsForPages, loading, error} = this.props;
-        let routerCount = '';
+        let routerCount = 1;
+        let arrayOfPaths = []; 
         if(loading) {
             return(
                 <div className="spinner-con">
@@ -45,9 +47,10 @@ class App extends Component {
                     {itemsForPages.map((items) => {
                         let path = routerCount;
                         routerCount += 1;
+                        arrayOfPaths.push(path);
                         return(
                             <Route
-                                path={`/${path}`}
+                                path={`/${path === 1 ? '' : path}`}
                                 render={() => {
                                     return(
                                         <ItemPage items={items}/>
@@ -62,6 +65,9 @@ class App extends Component {
                         component={CartPage}
                         exact />
                 </Switch>
+                <ItemPageLinks 
+                    arrayOfPaths={arrayOfPaths}
+                />
             </div> 
         );  
     }
