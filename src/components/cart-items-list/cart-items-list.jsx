@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Button from './../universal-elements/universal-button';
+import Button from '../universal-elements/universal-button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { toCart } from './../../actions/toCart';
-import { deleteFromCart } from './../../actions/deleteFromCart';
+import { toCart } from '../../actions/toCart';
+import { deleteFromCart } from '../../actions/deleteFromCart';
 
 import './cart-items-list.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../universal-elements/universal-button';
 import { connect } from 'react-redux';
-import { toCart } from './../../actions/toCart';
+import { toCart } from '../../actions/toCart';
 
 import './item-list.css';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import CartItemsList from './../cart-items-list/cart-items-list';
+import CartItemsList from '../cart-items-list/cart-items-list';
 
 import './cart-page.css';
 

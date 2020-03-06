@@ -4,10 +4,13 @@ module.exports = (env = {}) => {
 
     return {
         mode: 'development',
+        resolve: {
+            extensions: [".ts", ".tsx", ".js", ".jsx"]
+        },
         module: {
             rules: [
                 {
-                    test: /\.js$/,            
+                    test: /\.(jsx|js)$/,            
                     use: [
                         {
                             loader: 'babel-loader'

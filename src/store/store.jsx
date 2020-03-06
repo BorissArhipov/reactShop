@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware  } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import reducer from './../reducer/reducer';
+import reducer from '../reducer/reducer';
 
 const logMiddleware = ({ getState }) => (next) => (action) => {
     console.log(action.type, getState());

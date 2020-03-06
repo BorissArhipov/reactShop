@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import Input from './../universal-elements/universal-input';
+import Input from '../universal-elements/universal-input';
 
 
 import './header-search-panel.css';
