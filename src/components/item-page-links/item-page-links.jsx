@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './item-page-links.css';
 
 const ItemPageLinks = (paths) => {
-    console.log(paths);
     if(!paths.arrayOfPaths.length) {
         return null;
     }

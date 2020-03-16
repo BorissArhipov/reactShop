@@ -18,10 +18,20 @@ const itemsError = (error) => {
     };
 };
 
+const itemsSave = (itemsToSave) => {
+    return {
+        type: 'SAVE_ITEMS',
+        payload: itemsToSave
+    };
+};
+
 const fetchItems = (reactShopService) => () => (dispatch) => {
     dispatch(itemsRequested());
     reactShopService.getShopItems()
-        .then((data) => dispatch(itemsLoaded(data)))
+        .then((data) => {
+            dispatch(itemsSave(data))
+            dispatch(itemsLoaded(data));
+        })
         .catch((err) => dispatch(itemsError(err)));
 };
 
