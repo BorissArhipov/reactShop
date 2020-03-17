@@ -53,7 +53,13 @@ class App extends Component {
                                 path={`/${path === 1 ? '' : path}`}
                                 render={() => {
                                     return(
-                                        <ItemPage items={items}/>
+                                        <div>
+                                            <ItemPage items={items}/>
+                                            <ItemPageLinks 
+                                                arrayOfPaths={arrayOfPaths}
+                                            />
+                                        </div>
+                                        
                                     )}}
                                 exact 
                                 key={`page-${path}`}
@@ -65,9 +71,7 @@ class App extends Component {
                         component={CartPage}
                         exact />
                 </Switch>
-                <ItemPageLinks 
-                    arrayOfPaths={arrayOfPaths}
-                />
+                
             </div> 
         );  
     }

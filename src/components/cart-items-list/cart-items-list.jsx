@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { toCart } from '../../actions/toCart';
 import { deleteFromCart } from '../../actions/deleteFromCart';
+import PaymentForm from '../payment-form/payment-form';
+import { StripeProvider, Elements } from 'react-stripe-elements';
 
 import './cart-items-list.css';
 
@@ -57,15 +59,11 @@ class CartItemsList extends Component {
                     })}
                 </ul>
                 <div className="cart-items-list__con2">
-                    <p className="cart-items-list__text">
-                        Items in total: {count}
-                    </p>
-                    <p className="cart-items-list__text">
-                        Price in total: {sum}&euro;
-                    </p>
-                    <Button className="cart-items-list__btn-order">
-                        Make an order!
-                    </Button>
+                    <StripeProvider apiKey="pk_test_97ZfNkg9YKLbJ72I5oPfMLKx00Yg00yxqr">
+                        <Elements>
+                            <PaymentForm/>
+                        </Elements>
+                    </StripeProvider>
                 </div>
             </div>
         );
