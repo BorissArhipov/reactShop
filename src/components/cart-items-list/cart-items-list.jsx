@@ -61,7 +61,11 @@ class CartItemsList extends Component {
                 <div className="cart-items-list__con2">
                     <StripeProvider apiKey="pk_test_97ZfNkg9YKLbJ72I5oPfMLKx00Yg00yxqr">
                         <Elements>
-                            <PaymentForm/>
+                            <PaymentForm
+                                cartItems={cartItems}
+                                count={count}
+                                sum={sum}
+                            />
                         </Elements>
                     </StripeProvider>
                 </div>

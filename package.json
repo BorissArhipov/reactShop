@@ -27,7 +27,7 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack --env.mode=production",
-    "start": "node server.js",
+    "start": "node /src/server/server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
