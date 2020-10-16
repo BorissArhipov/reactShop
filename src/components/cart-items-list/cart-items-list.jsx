@@ -6,7 +6,6 @@ import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { toCart } from '../../actions/toCart';
 import { deleteFromCart } from '../../actions/deleteFromCart';
 import PaymentForm from '../payment-form/payment-form';
-import { StripeProvider, Elements } from 'react-stripe-elements';
 
 import './cart-items-list.css';
 
@@ -59,15 +58,11 @@ class CartItemsList extends Component {
                     })}
                 </ul>
                 <div className="cart-items-list__con2">
-                    <StripeProvider apiKey="pk_test_97ZfNkg9YKLbJ72I5oPfMLKx00Yg00yxqr">
-                        <Elements>
-                            <PaymentForm
-                                cartItems={cartItems}
-                                count={count}
-                                sum={sum}
-                            />
-                        </Elements>
-                    </StripeProvider>
+                    <PaymentForm
+                        cartItems={cartItems}
+                        count={count}
+                        sum={sum}
+                    />
                 </div>
             </div>
         );

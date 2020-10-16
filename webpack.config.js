@@ -4,6 +4,7 @@ module.exports = (env = {}) => {
 
     return {
         mode: 'development',
+        entry: './src/',
         resolve: {
             extensions: [".ts", ".tsx", ".js", ".jsx"]
         },
