@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchPanel from '../header-search-panel/header-search-panel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStore, faShoppingCart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faStore, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -30,12 +30,6 @@ class Header extends Component {
                                 </div>
                             </div>
                         </Link>
-                        <div className="header__login">
-                            <FontAwesomeIcon className="header__login-img" icon={faSignInAlt} />
-                            <p className="header__text">
-                                Login
-                            </p>
-                        </div>
                         <SearchPanel/>
                     </nav>  
                 </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { CardElement } from 'react-stripe-elements';
 
 import './payment-form.css';
 
@@ -7,7 +6,8 @@ class PaymentForm extends Component {
 
 
     render() {
-        const { count, sum } = this.props;
+        const { count, sum, cartItems } = this.props;
+        console.log(cartItems);
         return(
             <form 
                 className="payment-form"
@@ -20,7 +20,6 @@ class PaymentForm extends Component {
                         Items in total: {count}
                     </span>
                 </div>
-                <CardElement/>
                 <button>
                     Pay!
                 </button>

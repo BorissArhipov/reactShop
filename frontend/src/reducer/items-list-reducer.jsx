@@ -41,7 +41,6 @@ const updateItemsList = (state, action) => {
             };
     
         case 'SAVE_ITEMS':
-            console.log(action.payload);
             return {
                 ...state,
                 allItems: action.payload

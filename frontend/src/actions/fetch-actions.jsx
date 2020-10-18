@@ -29,10 +29,15 @@ const fetchItems = (reactShopService) => () => (dispatch) => {
     dispatch(itemsRequested());
     reactShopService.getShopItems()
         .then((data) => {
-            dispatch(itemsSave(data))
-            dispatch(itemsLoaded(data));
+            if(!data.loading) {
+                dispatch(itemsSave(data.data.items))
+                dispatch(itemsLoaded(data.data.items));
+            }   
         })
-        .catch((err) => dispatch(itemsError(err)));
+        .catch((err) => {
+            console.log(err);
+            dispatch(itemsError(err))
+        });
 };
 
 export {

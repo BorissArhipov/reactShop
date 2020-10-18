@@ -1,6 +1,8 @@
-export default class ReactShopService {
+import { itemsQuery } from './queries';
+import {client} from '../../index';
 
-    data = [
+class ReactShopService {
+    datata = [
         {
             id: 1,
             title: 'Frontal',
@@ -16,11 +18,11 @@ export default class ReactShopService {
             coverImage: 'https://images.unsplash.com/photo-1551298698-66b830a4f11c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'
         },
         {
-            id: 3,
-            title: 'Balace',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda tenetur inventore accusantium numquam officia voluptatibus amet dolor saepe aliquam tempora, odio eligendi voluptate ipsam minus dicta deleniti ea odit est.',
-            price: 280,
-            coverImage: 'https://images.unsplash.com/photo-1507904953637-96429a46671a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'
+            "id": 5,
+            "title": "Cotto",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda tenetur inventore accusantium numquam officia voluptatibus amet dolor saepe aliquam tempora, odio eligendi voluptate ipsam minus dicta deleniti ea odit est.",
+            "price": 148,
+            "coverImage": "https://images.unsplash.com/photo-1565105336789-e9392607c17b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
         },
         {
             id: 4,
@@ -52,15 +54,9 @@ export default class ReactShopService {
         },
     ];
   
-    getShopItems() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (Math.random() > 0.75) {
-            reject(new Error('Something bad happened'));
-          } else {
-            resolve(this.data);
-          }
-        }, 700);
-      });
+    async getShopItems() {
+      return client.query({query: itemsQuery});
     }
   }
+
+export default ReactShopService;
