@@ -41,5 +41,6 @@ const fetchItems = (reactShopService) => () => (dispatch) => {
 };
 
 export {
-    fetchItems
+    fetchItems,
+    itemsError
 };

@@ -65,8 +65,13 @@ const updateCart = (state, action) => {
                     sum: state.sum -= action.payload.price
                 };
             }
-            
-    
+        case 'EMPTY_CART':    
+            return {
+                ...state,
+                cartItems: [],
+                count: 0,
+                sum: 0
+            }
 
         default:
             return state;

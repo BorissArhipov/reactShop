@@ -8,7 +8,7 @@ const app = express();
 const PORT = 3005;
 app.use(cors());
 
-mongoose.connect('mongodb+srv://getData:<>@cluster0.6y8tr.mongodb.net/<>?retryWrites=true&w=majority', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://getData:<>@cluster0.6y8tr.mongodb.net/<>?retryWrites=true&w=majority', { useUnifiedTopology: true });
 
 app.use('/graphql', graphqlHTTP({
   schema,
