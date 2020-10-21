@@ -75,17 +75,23 @@ class PaymentForm extends Component {
                 onSubmit={(e) => this.handleSubmit(e)}
                 className="payment-form"
             >
-                <input id="name" name="name" type="text"/>
-                <input id="adress" name="adress" type="text"/>
-                <div>
-                    <span>
+                <label htmlFor="name" className="payment-label">
+                    Your name
+                </label>
+                <input className='payment-input' id="name" name="name" type="text"/>
+                <label htmlFor="adress" className='payment-label'>
+                    Your adress
+                </label>
+                <input className='payment-input' id="adress" name="adress" type="text"/>
+                <div className='payment-wrap'>
+                    <span className='payment-span'>
                         Total price: {sum}&euro;
                     </span>
-                    <span>
+                    <span className='payment-span'>
                         Items in total: {count}
                     </span>
                 </div>
-                <button type="submit">
+                <button className='payment-btn' type="submit">
                     Make an order!
                 </button>
             </form>

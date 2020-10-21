@@ -54,3 +54,28 @@ li {
 		opacity: 1;
 	}
 }
+
+@media screen and (max-width: 1140px) {
+    .container {
+        width: 940px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .container {
+        width: 720px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .container {
+        width: 520px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .container {
+        width: 320px;
+        padding: 0 5px;
+    }
+}

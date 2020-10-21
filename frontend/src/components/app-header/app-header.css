@@ -70,3 +70,9 @@
     color: #d2d8e4;
     font-weight: 500;
 }
+
+@media screen and (max-width: 550px) {
+    .header__logo-text {
+        display: none;
+    }
+}

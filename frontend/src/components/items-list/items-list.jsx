@@ -24,11 +24,6 @@ class ItemsList extends Component {
                                     </p>
                                     <div className="items-list__con">
                                         <Button 
-                                        className="items-list__btn-white"
-                                        > 
-                                            Viev
-                                        </Button>
-                                        <Button 
                                             onClick={() => {toCart({title: item.title, id: item.id, price: item.price})}}
                                             className="items-list__btn-blue"
                                         >

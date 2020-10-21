@@ -9,3 +9,10 @@
     justify-content: center;
     height: 1170px;
 }
+
+@media screen and (max-width: 1140px) {
+    .home-page__center {
+        height: auto;
+    }
+}
+

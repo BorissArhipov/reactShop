@@ -16,45 +16,23 @@
     animation: fadeIn ease 1s;
 }
 
-.items-list__item:hover {
-    margin: 10px 15px 20px 15px;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-}
 
 .items-list__item:nth-child(3n+3) {
     margin: 15px 0 15px 15px;
 }
 
-.items-list__item:nth-child(3n+3):hover {
-    margin: 10px 0 20px 15px;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-}
 
 .items-list__item:first-child {
     margin: 15px 15px 15px 0;
-}
-
-.items-list__item:first-child:hover {
-    margin: 10px 15px 20px 0;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .items-list__item:nth-child(4n+4) {
     margin: 15px 15px 15px 0;
 }
 
-.items-list__item:nth-child(4n+4):hover {
-    margin: 10px 15px 20px 0;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-}
 
 .items-list__item:nth-child(7n) {
     margin: 15px 15px 15px 0;
-}
-
-.items-list__item:nth-child(7n):hover {
-    margin: 10px 15px 20px 0;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 
@@ -112,4 +90,56 @@
 
 .items-list__btn-blue:hover {
     background-color: #2a3c51;
+}
+
+@media screen and (max-width: 1140px) {
+    .items-list {
+        width: 910px;
+        justify-content: center;
+    }
+
+    .items-list__item {
+        margin: 15px;
+    }
+
+    .items-list__item:nth-child(3n+3) {
+        margin: 15px;
+    }
+    
+    .items-list__item:first-child {
+        margin: 15px;
+    }
+    
+    .items-list__item:nth-child(4n+4) {
+        margin: 15px;
+    }
+    
+    
+    .items-list__item:nth-child(7n) {
+        margin: 15px;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .items-list__item {
+        margin: 5px;
+    }
+
+    .items-list__item:nth-child(3n+3) {
+        margin: 5px;
+    }
+    
+    .items-list__item:first-child {
+        margin: 5px;
+    }
+    
+    .items-list__item:nth-child(4n+4) {
+        margin: 5px;
+    }
+    
+    
+    .items-list__item:nth-child(7n) {
+        margin: 5px;
+    }
 }
